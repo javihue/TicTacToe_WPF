@@ -1,0 +1,100 @@
+﻿<Window x:Class="PRISMAPP.Views.MainWindow" xmlns:converters="clr-namespace:PRISMAPP.Converters"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://prismlibrary.com/" xmlns:vm="clr-namespace:PRISMAPP.ViewModels"
+        Title="{Binding Title}" Height="350" Width="525">
+    <Window.DataContext>
+        <vm:MainWindowViewModel />
+    </Window.DataContext>
+    <Window.Resources>
+        <converters:MarkerConverter x:Key="markerConverter" />
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Column="2" Grid.Row="1" 
+                   Text="Tic Tac Toe" FontSize="40" Margin="10" HorizontalAlignment="Center">
+        </TextBlock>
+
+        <TextBlock Grid.Column="2" Grid.Row="2" 
+                   Text="{Binding Status}" Margin="10" HorizontalAlignment="Center">
+        </TextBlock>
+
+        <Grid Grid.Column="2" Grid.Row="3" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Button Grid.Column="0" Grid.Row="0" Background="White" Command="{Binding MarkerCommand}" CommandParameter="0" >
+                <Viewbox>
+                    <TextBlock Text="{Binding Markers,Converter={StaticResource ResourceKey=markerConverter},ConverterParameter='0'}" />
+                </Viewbox>
+            </Button>
+            <Button Grid.Column="1" Grid.Row="0" Background="White" Command="{Binding MarkerCommand}" CommandParameter="1" >
+                <Viewbox>
+                    <TextBlock Text="{Binding Markers,Converter={StaticResource ResourceKey=markerConverter},ConverterParameter='1'}"/>
+                </Viewbox>
+            </Button>
+            <Button Grid.Column="2" Grid.Row="0" Background="White" Command="{Binding MarkerCommand}" CommandParameter="2" >
+                <Viewbox>
+                    <TextBlock Text="{Binding Markers,Converter={StaticResource ResourceKey=markerConverter},ConverterParameter='2'}"/>
+                </Viewbox>
+            </Button>
+            <Button Grid.Column="0" Grid.Row="1" Background="White" Command="{Binding MarkerCommand}" CommandParameter="3" >
+                <Viewbox>
+                    <TextBlock Text="{Binding Markers,Converter={StaticResource ResourceKey=markerConverter},ConverterParameter='3'}"/>
+                </Viewbox>
+            </Button>
+            <Button Grid.Column="1" Grid.Row="1" Background="White" Command="{Binding MarkerCommand}" CommandParameter="4" >
+                <Viewbox>
+                    <TextBlock Text="{Binding Markers,Converter={StaticResource ResourceKey=markerConverter},ConverterParameter='4'}"/>
+                </Viewbox>
+            </Button>
+            <Button Grid.Column="2" Grid.Row="1" Background="White" Command="{Binding MarkerCommand}" CommandParameter="5" >
+                <Viewbox>
+                    <TextBlock Text="{Binding Markers,Converter={StaticResource ResourceKey=markerConverter},ConverterParameter='5'}"/>
+                </Viewbox>
+            </Button>
+            <Button Grid.Column="0" Grid.Row="2" Background="White" Command="{Binding MarkerCommand}" CommandParameter="6" >
+                <Viewbox>
+                    <TextBlock Text="{Binding Markers,Converter={StaticResource ResourceKey=markerConverter},ConverterParameter='6'}"/>
+                </Viewbox>
+            </Button>
+            <Button Grid.Column="1" Grid.Row="2" Background="White" Command="{Binding MarkerCommand}" CommandParameter="7" >
+                <Viewbox>
+                    <TextBlock Text="{Binding Markers,Converter={StaticResource ResourceKey=markerConverter},ConverterParameter='7'}"/>
+                </Viewbox>
+            </Button>
+            <Button Grid.Column="2" Grid.Row="2" Background="White" Command="{Binding MarkerCommand}" CommandParameter="8" >
+                <Viewbox>
+                    <TextBlock Text="{Binding Markers,Converter={StaticResource ResourceKey=markerConverter},ConverterParameter='8'}"/>
+                </Viewbox>
+            </Button>
+        </Grid>
+
+        <Button Content="{Binding Prompt}"  Grid.Column="2" Grid.Row="4" HorizontalAlignment="Center" MinWidth="200" MaxHeight="50" BorderBrush="White" Command="{Binding StartGameCommand}">
+            <Button.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveBorderColorKey}}"/>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Window>

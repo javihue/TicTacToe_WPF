@@ -1,0 +1,72 @@
+﻿<Window x:Class="TicTacToeWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TicTacToeWPF"
+        mc:Ignorable="d" 
+        Title="TicTacToe" Height="450" Width="400" FontSize="18" FontFamily="Segoe UI Light" >
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFA4FFF4" Offset="1"/>
+            <GradientStop Color="White"/>
+        </LinearGradientBrush>
+    </Window.Background>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Column="2" Grid.Row="1" 
+                   Text="Tic Tac Toe" FontSize="40" Margin="10" HorizontalAlignment="Center">
+        </TextBlock>
+
+        <TextBlock Grid.Column="2" Grid.Row="2" 
+                   Name="gameLabel" Margin="10" HorizontalAlignment="Center">
+        </TextBlock>
+
+        <StackPanel Grid.Column="2" Grid.Row="3" Margin="10">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="Cell1" Width="50" Height="50" Background="White" Click="BoardGame_Click" IsEnabled="False"/>
+                <Button x:Name="Cell2" Width="50" Height="50" Background="White" Click="BoardGame_Click" IsEnabled="False"/>
+                <Button x:Name="Cell3" Width="50" Height="50" Background="White" Click="BoardGame_Click" IsEnabled="False"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="Cell4" Width="50" Height="50" Background="White" Click="BoardGame_Click" IsEnabled="False"/>
+                <Button x:Name="Cell5" Width="50" Height="50" Background="White" Click="BoardGame_Click" IsEnabled="False"/>
+                <Button x:Name="Cell6" Width="50" Height="50" Background="White" Click="BoardGame_Click" IsEnabled="False"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="Cell7" Width="50" Height="50" Background="White" Click="BoardGame_Click" IsEnabled="False"/>
+                <Button x:Name="Cell8" Width="50" Height="50" Background="White" Click="BoardGame_Click" IsEnabled="False"/>
+                <Button x:Name="Cell9" Width="50" Height="50" Background="White" Click="BoardGame_Click" IsEnabled="False"/>
+            </StackPanel>
+        </StackPanel>
+
+        <Button Name="gameButton" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Center" Click="GameButton_Click" MinWidth="200" MaxHeight="50" BorderBrush="White">
+            <Button.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveBorderColorKey}}"/>
+            </Button.Background>
+        </Button>
+
+
+
+
+
+
+
+    </Grid>
+</Window>
