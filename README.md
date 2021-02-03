@@ -4,7 +4,7 @@ Implementation of the classic game in C#, using the PRISM framework, WPF and XAM
 
 ## Built With
 
-* [IntelliJ Community](https://www.jetbrains.com/idea/download/) - IDE used
+* [Visual Studio](https://code.visualstudio.com/) - IDE used
 * [PRISM](https://prismlibrary.com/index.html) - framework used
 
 ## Authors
